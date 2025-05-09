@@ -1,0 +1,95 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 327 73% 65%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 54 95% 67%;
+    --accent-foreground: 210 40% 30%;
+
+    --success: 142 69% 58%;
+    --success-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 47% 11%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .gradient-heading {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-400 to-blue-600;
+  }
+  
+  .dashboard-card {
+    @apply border border-border bg-card text-card-foreground shadow-sm rounded-lg p-6 h-full;
+  }
+  
+  .status-badge {
+    @apply rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .status-success {
+    @apply bg-green-100 text-green-700;
+  }
+  
+  .status-warning {
+    @apply bg-yellow-100 text-yellow-700;
+  }
+  
+  .status-error {
+    @apply bg-red-100 text-red-700;
+  }
+  
+  .status-neutral {
+    @apply bg-gray-100 text-gray-700;
+  }
+
+  .hero-section {
+    @apply py-20 px-4 md:px-8 flex flex-col items-center justify-center text-center;
+    background: linear-gradient(109.6deg, rgba(212,235,253,1) 11.2%, rgba(249,249,228,1) 91.1%);
+  }
+
+  .service-card {
+    @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100;
+  }
+
+  .doctor-card {
+    @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100 flex flex-col items-center text-center;
+  }
+}
